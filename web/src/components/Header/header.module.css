@@ -1,0 +1,42 @@
+@import '../../styles/media-queries.css';
+
+.header {
+  height: 20rem;
+  background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)),
+    url('./hexes.png');
+  position: relative;
+  border-top: 1px solid var(--color-white);
+}
+
+.fullName {
+  position: absolute;
+  top: 2rem;
+  right: 10vw;
+  text-align: center;
+
+  @media (--media-min-medium) {
+    right: 20vw;
+  }
+}
+
+.firstName {
+  display: block;
+  color: var(--color-primary);
+}
+
+.lastName {
+  display: block;
+  color: var(--color-white);
+}
+
+.profileImage {
+  height: 14rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  filter: grayscale();
+
+  @media (--media-min-small) {
+    height: 19rem;
+  }
+}

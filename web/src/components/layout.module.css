@@ -1,6 +1,12 @@
 @import '../styles/media-queries.css';
 @import '../styles/vars.css';
 
+.site {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100% - 51px);
+}
+
 .content {
   min-height: calc(100% - 73px - 152px);
 
@@ -10,18 +16,11 @@
 }
 
 .footer {
-
-}
-
-.footerWrapper {
-  box-sizing: border-box;
-  max-width: 960px;
-  padding: 1.5em;
-  margin: 0 auto;
-
-  @media (--media-min-small) {
-    padding: 2em;
-  }
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem;
 }
 
 .companyAddress {

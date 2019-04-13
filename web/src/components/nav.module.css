@@ -4,18 +4,19 @@
 .root {
   position: relative;
   z-index: 100;
+  background: var(--color-primary);
+  color: var(--color-white);
+  height: 3rem;
 }
 
 .wrapper {
   box-sizing: border-box;
-  margin: 0 auto;
   max-width: 960px;
-  padding: 1em;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
-
-  @media (--media-min-small) {
-    padding: 1.5em 1.5em;
-  }
+  align-items: center;
+  height: 100%;
 }
 
 .branding {
@@ -77,11 +78,11 @@
 
   @media (--media-max-small) {
     position: absolute;
-    background: #fff;
+    background: var(--color-black);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     left: 0;
     right: 0;
-    top: 4rem;
+    top: 3.02rem;
 
     @nest & ul {
       padding: 1rem 0;

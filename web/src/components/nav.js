@@ -3,9 +3,9 @@ import React from 'react'
 import Icon from './icons'
 import { cn } from '../lib/helpers'
 
-import styles from './header.module.css'
+import styles from './nav.module.css'
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
+const Nav = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   <div className={styles.root}>
     <div className={styles.wrapper}>
       <h1 className={styles.branding}>
@@ -36,4 +36,4 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
   </div>
 )
 
-export default Header
+export default Nav
