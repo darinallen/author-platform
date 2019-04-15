@@ -1,6 +1,6 @@
-@import '../../styles/media-queries.css';
+@import '../../../styles/media-queries.css';
 
-.header {
+.hero {
   height: 20rem;
   background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)),
     url('./hexes.png');

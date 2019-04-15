@@ -16,8 +16,6 @@ import page from './page'
 import person from './person'
 import post from './post'
 import postAuthor from './postAuthor'
-import project from './project'
-import projectMember from './projectMember'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
 
@@ -41,8 +39,6 @@ export default createSchema({
     person,
     post,
     postAuthor,
-    project,
-    projectMember,
     siteSettings,
     slideshow
 

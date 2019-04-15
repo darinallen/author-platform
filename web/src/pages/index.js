@@ -6,7 +6,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Header from '../components/Header'
+import Hero from '../components/shared/hero/hero'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -79,7 +79,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Header />
+      <Hero />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         {postNodes && (

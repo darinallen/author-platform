@@ -1,11 +1,11 @@
 import React from 'react'
 
 import tanthony from './profile.png'
-import styles from './header.module.css'
-import typography from '../typography.module.css'
+import styles from './hero.module.css'
+import typography from '../../typography.module.css'
 
-const Layout = () => (
-  <div className={styles.header}>
+const Hero = () => (
+  <div className={styles.hero}>
     <h1 className={`${typography.title1} ${styles.fullName}`}>
       <span className={styles.firstName}>T Anthony</span>
       <span className={styles.lastName}>Allen</span>
@@ -14,4 +14,4 @@ const Layout = () => (
   </div>
 )
 
-export default Layout
+export default Hero

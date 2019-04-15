@@ -4,16 +4,7 @@ import MdSettings from 'react-icons/lib/md/settings'
 import MdBook from 'react-icons/lib/md/book'
 import FaFileO from 'react-icons/lib/fa/file-o'
 
-const hiddenTypes = [
-  'category',
-  'companyInfo',
-  'page',
-  'person',
-  'post',
-  'project',
-  'siteSettings',
-  'writing'
-]
+const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'siteSettings', 'writing']
 
 export default () =>
   S.list()
@@ -42,10 +33,6 @@ export default () =>
         .schemaType('writing')
         .child(S.documentTypeList('writing').title('Writing'))
         .icon(MdBook),
-      S.listItem()
-        .title('Projects')
-        .schemaType('project')
-        .child(S.documentTypeList('project')),
       S.listItem()
         .title('Blog posts')
         .schemaType('post')

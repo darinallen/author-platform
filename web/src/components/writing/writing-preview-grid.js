@@ -1,8 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import WritingPreview from './WritingPreview'
+import WritingPreview from './writing-preview'
 
-import styles from './WritingPreviewGrid.module.css'
+import styles from './writing-preview-grid.module.css'
 
 function WritingPreviewGrid (props) {
   return (
