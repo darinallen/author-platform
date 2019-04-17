@@ -17,8 +17,8 @@ export function getBlogUrl (publishedAt, slug) {
   return `/blog/${format(publishedAt, 'YYYY/MM')}/${slug.current || slug}/`
 }
 
-export function getWritingUrl (releaseDate, slug) {
-  return `/writing/${format(releaseDate, 'YYYY/MM')}/${slug.current || slug}/`
+export function getWritingUrl (slug) {
+  return `/writing/${slug.current || slug}/`
 }
 
 export function buildImageObj (source) {

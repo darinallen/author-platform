@@ -6,7 +6,7 @@ import Line from '../../shared/line'
 import styles from './card.module.css'
 
 const Card = props => (
-  <Link className={styles.root} to={getWritingUrl(props.releaseDate, props.slug.current)}>
+  <Link className={styles.root} to={getWritingUrl(props.slug.current)}>
     <div className={styles.header}>
       <h3 className={styles.title}>{props.title}</h3>
     </div>
