@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { buildImageObj, getWritingUrl } from '../../lib/helpers'
-import { imageUrlFor } from '../../lib/image-url'
-import Line from '../shared/line'
-import styles from './book-card.module.css'
+import { buildImageObj, getWritingUrl } from '../../../lib/helpers'
+import { imageUrlFor } from '../../../lib/image-url'
+import Line from '../../shared/line'
+import styles from './card.module.css'
 
-const Books = props => (
+const Card = props => (
   <Link className={styles.root} to={getWritingUrl(props.releaseDate, props.slug.current)}>
     <div className={styles.header}>
       <h3 className={styles.title}>{props.title}</h3>
@@ -26,4 +26,4 @@ const Books = props => (
   </Link>
 )
 
-export default Books
+export default Card

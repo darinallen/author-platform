@@ -1,13 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes } from '../lib/helpers'
-import WritingPreviewGrid from '../components/writing/writing-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
-import BookCardGrid from '../components/writing/book-card-grid'
+import CardGrid from '../components/shared/cards/card-grid'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
@@ -26,12 +25,11 @@ const WritingPage = props => {
 
   return (
     <Layout>
-      <SEO title='Blog' />
+      <SEO title='Writing' />
       <Hero />
       <Container>
         <h1 className={responsiveTitle1}>Writing</h1>
-        <BookCardGrid nodes={postNodes} />
-        {postNodes && postNodes.length > 0 && <WritingPreviewGrid nodes={postNodes} />}
+        {postNodes && postNodes.length > 0 && <CardGrid nodes={postNodes} />}
       </Container>
     </Layout>
   )
