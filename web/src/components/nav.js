@@ -22,10 +22,10 @@ const Nav = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
             <Link to='/writing/'>Writing</Link>
           </li>
           <li>
-            <Link to='/about/'>About</Link>
+            <Link to='/blog/'>Blog</Link>
           </li>
           <li>
-            <Link to='/blog/'>Blog</Link>
+            <Link to='/about/'>About</Link>
           </li>
           <li>
             <Link to='/contact/'>Contact</Link>
