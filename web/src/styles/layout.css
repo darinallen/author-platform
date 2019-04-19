@@ -29,7 +29,7 @@
 }
 
 html {
-  font-family: Raleway, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Quattrocento Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   box-sizing: border-box;

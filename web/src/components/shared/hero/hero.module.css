@@ -7,10 +7,12 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column-reverse;
 
   @media (--media-min-medium) {
     flex-direction: row;
+    justify-content: flex-start;
   }
 }
 
@@ -19,6 +21,10 @@
   filter: contrast(1.2);
   align-self: flex-start;
 
+  @media (--media-min-small) {
+    height: 15rem;
+  }
+
   @media (--media-min-medium) {
     height: 19rem;
     align-self: flex-end;
@@ -26,12 +32,28 @@
 }
 
 .text {
+  margin-top: 1rem;
   text-align: center;
+  align-self: flex-end;
+
+  @media (--media-min-small) {
+    position: absolute;
+    top: -0.5rem;
+    right: 1rem;
+  }
+
+  @media (--media-min-smedium) {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
 
   @media (--media-min-medium) {
-    margin-top: -1rem;
+    position: static;
+    margin-top: -2rem;
     margin-right: 4rem;
     width: 19rem;
+    align-self: center;
   }
 
   @media (--media-min-large) {

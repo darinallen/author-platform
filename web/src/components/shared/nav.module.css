@@ -23,7 +23,7 @@
 }
 
 .branding {
-  font-size: var(--font-large-size);
+  font-size: inherit;
   margin: 0;
   flex: 1;
 
