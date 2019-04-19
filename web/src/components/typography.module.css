@@ -18,6 +18,8 @@
   --font-title2-line-height: calc(36 / 32);
   --font-title1-size: calc(44 / var(--base-unit) * 1rem);
   --font-title1-line-height: calc(56 / 44);
+  --font-title0-size: calc(54 / var(--base-unit) * 1rem);
+  --font-title0-line-height: calc(56 / 44);
 }
 
 /*
@@ -74,7 +76,7 @@
     line-height: var(--font-base-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media (--media-min-large) {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
@@ -136,9 +138,14 @@
 }
 
 .responsiveTitle4 {
-  font-size: var(--font-small-size);
+  font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   margin: 1rem 0 0.5rem;
+
+  @media (--media-min-small) {
+    font-size: var(--font-base-size);
+    line-height: var(--font-base-line-height);
+  }
 
   @media (--media-min-medium) {
     font-size: var(--font-large-size);

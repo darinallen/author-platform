@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import Icon from './icons'
-import { cn } from '../lib/helpers'
+import Icon from '../icons'
+import { cn } from '../../lib/helpers'
 
 import styles from './nav.module.css'
 

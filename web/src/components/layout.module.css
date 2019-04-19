@@ -16,6 +16,7 @@
 }
 
 .footer {
+  font-family: Exo2;
   grid-row-start: 3;
   grid-row-end: 4;
   background-color: var(--color-black);

@@ -1,7 +1,35 @@
 @import './vars.css';
 
+@font-face {
+  font-family: Exo2;
+  font-weight: bold;
+  src: url('../fonts/Exo2-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  src: url('../fonts/QuattrocentoSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-weight: bold;
+  src: url('../fonts/QuattrocentoSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quattrocento Sans';
+  font-style: italic;
+  src: url('../fonts/QuattrocentoSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Rockwell;
+  src: url('../fonts/ROCK.ttf') format('truetype');
+}
+
 html {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   box-sizing: border-box;
@@ -26,4 +54,14 @@ body > div,
 body > div > div {
   height: 100%;
   background-color: #f8f8f8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Exo2;
+  font-weight: bold;
 }
