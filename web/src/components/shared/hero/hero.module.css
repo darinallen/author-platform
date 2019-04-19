@@ -17,13 +17,10 @@
 }
 
 .profileImage {
+  margin-top: 0.5rem;
   height: 14rem;
-  filter: contrast(1.2);
+  filter: grayscale() contrast(1.1);
   align-self: flex-start;
-
-  @media (--media-min-small) {
-    height: 15rem;
-  }
 
   @media (--media-min-medium) {
     height: 19rem;

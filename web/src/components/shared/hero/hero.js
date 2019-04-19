@@ -1,6 +1,6 @@
 import React from 'react'
 
-import tanthony from './profile.png'
+import tanthony from './tanthony.png'
 import styles from './hero.module.css'
 import typography from '../../typography.module.css'
 
