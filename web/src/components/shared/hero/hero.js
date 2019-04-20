@@ -6,7 +6,7 @@ import typography from '../../typography.module.css'
 
 const Hero = () => (
   <div className={styles.hero}>
-    <img className={styles.profileImage} src={tanthony} />
+    <img className={styles.headshot} src={tanthony} />
     <div className={styles.text}>
       <h1 className={`${typography.title1} ${styles.fullName}`}>
         <span className={styles.firstName}>T Anthony </span>

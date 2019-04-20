@@ -1,7 +1,7 @@
 @import '../../../styles/media-queries.css';
 
 .hero {
-  height: 20rem;
+  height: 18rem;
   background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)),
     url('./hexes.png');
   position: relative;
@@ -16,14 +16,14 @@
   }
 }
 
-.profileImage {
-  margin-top: 0.5rem;
-  height: 14rem;
+.headshot {
+  margin-top: 0.8rem;
+  max-height: 12rem;
   filter: grayscale() contrast(1.1);
-  align-self: flex-start;
+  align-self: center;
 
   @media (--media-min-medium) {
-    height: 19rem;
+    max-height: 17rem;
     align-self: flex-end;
   }
 }
@@ -31,24 +31,9 @@
 .text {
   margin-top: 1rem;
   text-align: center;
-  align-self: flex-end;
-
-  @media (--media-min-small) {
-    position: absolute;
-    top: -0.5rem;
-    right: 1rem;
-  }
-
-  @media (--media-min-smedium) {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-  }
 
   @media (--media-min-medium) {
-    position: static;
-    margin-top: -2rem;
-    margin-right: 4rem;
+    margin-top: -1rem;
     width: 19rem;
     align-self: center;
   }
