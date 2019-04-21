@@ -6,7 +6,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
-import CardGrid from '../components/shared/cards/card-grid'
+import PreviewGrid from '../components/shared/preview-grid'
+import WritingPreview from '../components/writing-preview'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
@@ -21,7 +22,7 @@ const WritingPage = props => {
     )
   }
 
-  const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
+  const writingNodes = data && data.writing && mapEdgesToNodes(data.writing)
 
   return (
     <Layout>
@@ -29,7 +30,16 @@ const WritingPage = props => {
       <Hero />
       <Container>
         <h1 className={responsiveTitle1}>Writing</h1>
-        {postNodes && postNodes.length > 0 && <CardGrid nodes={postNodes} />}
+        {writingNodes && (
+          <PreviewGrid>
+            {writingNodes &&
+              writingNodes.map(node => (
+                <li key={node.id}>
+                  <WritingPreview {...node} />
+                </li>
+              ))}
+          </PreviewGrid>
+        )}
       </Container>
     </Layout>
   )
@@ -39,7 +49,7 @@ export default WritingPage
 
 export const query = graphql`
   query WritingPageQuery {
-    posts: allSanityWriting(limit: 12, sort: { fields: [releaseDate], order: DESC }) {
+    writing: allSanityWriting(sort: { fields: [releaseDate], order: DESC }) {
       edges {
         node {
           id

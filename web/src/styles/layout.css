@@ -54,6 +54,7 @@ body > div,
 body > div > div {
   height: 100%;
   background-color: #f8f8f8;
+  min-width: 18rem;
 }
 
 h1,
@@ -64,4 +65,9 @@ h5,
 h6 {
   font-family: Exo2;
   font-weight: bold;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
+import WritingPreview from '../components/writing-preview'
+import PreviewGrid from '../components/shared/preview-grid'
+import BlogPostPreview from '../components/blog-post-preview'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
@@ -51,6 +53,29 @@ export const query = graphql`
         }
       }
     }
+
+    writing: allSanityWriting(limit: 6, sort: { fields: [releaseDate], order: DESC }) {
+      edges {
+        node {
+          id
+          releaseDate
+          mainImage {
+            asset {
+              _id
+            }
+            alt
+          }
+          title
+          _rawExcerpt
+          slug {
+            current
+          }
+          categories {
+            title
+          }
+        }
+      }
+    }
   }
 `
 
@@ -70,6 +95,10 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
 
+  const writingNodes = (data || {}).writing
+    ? mapEdgesToNodes(data.writing).filter(filterOutDocsWithoutSlugs)
+    : []
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -82,12 +111,25 @@ const IndexPage = props => {
       <Hero />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
+        {writingNodes && (
+          <PreviewGrid title='Latest writing' browseMoreHref='/writing/'>
+            {writingNodes &&
+              writingNodes.map(node => (
+                <li key={node.id}>
+                  <WritingPreview {...node} />
+                </li>
+              ))}
+          </PreviewGrid>
+        )}
         {postNodes && (
-          <BlogPostPreviewGrid
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/blog/'
-          />
+          <PreviewGrid title='Latest blog posts' browseMoreHref='/blog/'>
+            {postNodes &&
+              postNodes.map(node => (
+                <li key={node.id}>
+                  <BlogPostPreview {...node} />
+                </li>
+              ))}
+          </PreviewGrid>
         )}
       </Container>
     </Layout>
