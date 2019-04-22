@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes } from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
+import PreviewGrid from '../components/shared/preview-grid'
+import BlogPostPreview from '../components/blog-post-preview'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
@@ -27,7 +28,14 @@ const BlogPage = props => {
       <SEO title='Blog' />
       <Container>
         <h1 className={responsiveTitle1}>Blog</h1>
-        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+        <PreviewGrid>
+          {postNodes &&
+            postNodes.map(node => (
+              <li key={node.id}>
+                <BlogPostPreview {...node} />
+              </li>
+            ))}
+        </PreviewGrid>
       </Container>
     </Layout>
   )

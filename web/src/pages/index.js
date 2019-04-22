@@ -46,7 +46,7 @@ const IndexPage = props => {
         <h1 hidden>Welcome to {site.title}</h1>
         <Welcome />
         {writingNodes && (
-          <PreviewGrid title='Latest writing' browseMoreHref='/writing/'>
+          <PreviewGrid title='Recent writing' browseMoreHref='/writing/'>
             {writingNodes &&
               writingNodes.map(node => (
                 <li key={node.id}>
@@ -61,7 +61,7 @@ const IndexPage = props => {
       </Container>
       <Container>
         {postNodes && (
-          <PreviewGrid title='Latest blog posts' browseMoreHref='/blog/'>
+          <PreviewGrid title='Recent blog posts' browseMoreHref='/blog/'>
             {postNodes &&
               postNodes.map(node => (
                 <li key={node.id}>
