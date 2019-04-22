@@ -8,15 +8,6 @@ import Layout from '../containers/layout'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
-export const query = graphql`
-  query ContactPageQuery {
-    page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
-      title
-      _rawBody
-    }
-  }
-`
-
 const ContactPage = props => {
   const { data, errors } = props
 
@@ -54,3 +45,12 @@ ContactPage.defaultProps = {
   }
 }
 export default ContactPage
+
+export const query = graphql`
+  query ContactPageQuery {
+    page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
+      title
+      _rawBody
+    }
+  }
+`

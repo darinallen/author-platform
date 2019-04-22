@@ -9,33 +9,6 @@ import Layout from '../containers/layout'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
-export const query = graphql`
-  query BlogPageQuery {
-    posts: allSanityPost(
-      limit: 12
-      sort: { fields: [publishedAt], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-  }
-`
-
 const BlogPage = props => {
   const { data, errors } = props
 
@@ -61,3 +34,27 @@ const BlogPage = props => {
 }
 
 export default BlogPage
+
+export const query = graphql`
+  query BlogPageQuery {
+    posts: allSanityPost(limit: 12, sort: { fields: [publishedAt], order: DESC }) {
+      edges {
+        node {
+          id
+          publishedAt
+          mainImage {
+            asset {
+              _id
+            }
+            alt
+          }
+          title
+          _rawExcerpt
+          slug {
+            current
+          }
+        }
+      }
+    }
+  }
+`

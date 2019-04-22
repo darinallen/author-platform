@@ -1,0 +1,5 @@
+.root {
+  background-color: var(--color-primary);
+  color: #fff;
+  height: 25rem;
+}

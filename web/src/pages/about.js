@@ -10,31 +10,6 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
-export const query = graphql`
-  query AboutPageQuery {
-    page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
-      id
-      _id
-      title
-      _rawBody
-    }
-    people: allSanityPerson {
-      edges {
-        node {
-          id
-          image {
-            asset {
-              _id
-            }
-          }
-          name
-          _rawBio
-        }
-      }
-    }
-  }
-`
-
 const AboutPage = props => {
   const { data, errors } = props
 
@@ -69,3 +44,28 @@ const AboutPage = props => {
 }
 
 export default AboutPage
+
+export const query = graphql`
+  query AboutPageQuery {
+    page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
+      id
+      _id
+      title
+      _rawBody
+    }
+    people: allSanityPerson {
+      edges {
+        node {
+          id
+          image {
+            asset {
+              _id
+            }
+          }
+          name
+          _rawBio
+        }
+      }
+    }
+  }
+`
