@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { buildImageObj, getWritingUrl } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
-import Line from './shared/line'
 import styles from './writing-preview.module.css'
 
 const WritingPreview = props => (
@@ -20,7 +19,6 @@ const WritingPreview = props => (
           alt={props.mainImage.alt}
         />
       </div>
-      <Line />
       <span className={styles.summary}>This is the book summary. It is a very exciting book!</span>
     </div>
   </Link>
