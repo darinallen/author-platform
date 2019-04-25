@@ -6,6 +6,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
+import books from '../components/shared/hero/books.png'
 import PreviewGrid from '../components/shared/preview-grid'
 import WritingPreview from '../components/writing-preview'
 
@@ -27,7 +28,11 @@ const WritingPage = props => {
   return (
     <Layout>
       <SEO title='Writing' />
-      <Hero />
+      <Hero
+        image={books}
+        titleTop='Writing'
+        subtitle='Science Fiction, Slice of Life & Short Stories'
+      />
       <Container>
         <h1 className={responsiveTitle1}>Writing</h1>
         {writingNodes && (

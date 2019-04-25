@@ -5,6 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
+import tAnthony from '../components/shared/hero/tanthony.png'
 import Container from '../components/container'
 import Welcome from '../components/welcome'
 import PreviewGrid from '../components/shared/preview-grid'
@@ -41,7 +42,13 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Hero />
+      <Hero
+        image={tAnthony}
+        titleTop='T Anthony '
+        titleBottom='Allen'
+        subtitle='Novels, Flash Fiction & Artwork'
+        className='headshot'
+      />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         <Welcome />

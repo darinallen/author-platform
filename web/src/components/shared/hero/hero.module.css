@@ -1,6 +1,6 @@
 @import '../../../styles/media-queries.css';
 
-.hero {
+.root {
   height: 18rem;
   background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)),
     url('./hexes.png');
@@ -12,15 +12,26 @@
 
   @media (--media-min-medium) {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+  }
+}
+
+.image {
+  margin-top: 0.8rem;
+  max-height: 10.5rem;
+  filter: contrast(1.1);
+  align-self: center;
+  margin-bottom: 1.5rem;
+
+  @media (--media-min-medium) {
+    max-height: 17rem;
+    margin-bottom: 0;
   }
 }
 
 .headshot {
-  margin-top: 0.8rem;
   max-height: 12rem;
-  filter: grayscale() contrast(1.1);
-  align-self: center;
+  margin-bottom: 0;
 
   @media (--media-min-medium) {
     max-height: 17rem;
@@ -34,16 +45,17 @@
 
   @media (--media-min-medium) {
     margin-top: -1rem;
+    margin-left: 1rem;
     width: 19rem;
     align-self: center;
   }
 
   @media (--media-min-large) {
-    margin-left: 4rem;
+    margin-left: 3rem;
   }
 }
 
-.fullName {
+.title {
   font-family: Rockwell;
   font-size: var(--font-title2-size);
   letter-spacing: 0.2rem;
@@ -58,11 +70,11 @@
   }
 }
 
-.firstName {
+.titleTop {
   color: var(--color-primary);
 }
 
-.lastName {
+.titleBottom {
   color: var(--color-white);
 }
 
