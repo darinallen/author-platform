@@ -24,7 +24,8 @@
   margin-bottom: 1.5rem;
 
   @media (--media-min-medium) {
-    max-height: 17rem;
+    max-height: 14rem;
+    margin-top: 0;
     margin-bottom: 0;
   }
 }

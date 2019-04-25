@@ -6,7 +6,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
-import books from '../components/shared/hero/books.png'
+import typewriter from '../components/shared/hero/typewriter.png'
 import PreviewGrid from '../components/shared/preview-grid'
 import WritingPreview from '../components/writing-preview'
 
@@ -29,7 +29,7 @@ const WritingPage = props => {
     <Layout>
       <SEO title='Writing' />
       <Hero
-        image={books}
+        image={typewriter}
         titleTop='Writing'
         subtitle='Science Fiction, Slice of Life & Short Stories'
       />
