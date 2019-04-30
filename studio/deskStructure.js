@@ -2,9 +2,19 @@ import S from '@sanity/desk-tool/structure-builder'
 import MdBusiness from 'react-icons/lib/md/business'
 import MdSettings from 'react-icons/lib/md/settings'
 import MdBook from 'react-icons/lib/md/book'
+import MdBrush from 'react-icons/lib/md/brush'
 import FaFileO from 'react-icons/lib/fa/file-o'
 
-const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'siteSettings', 'writing']
+const hiddenTypes = [
+  'category',
+  'companyInfo',
+  'page',
+  'person',
+  'post',
+  'siteSettings',
+  'writing',
+  'art'
+]
 
 export default () =>
   S.list()
@@ -33,6 +43,11 @@ export default () =>
         .schemaType('writing')
         .child(S.documentTypeList('writing').title('Writing'))
         .icon(MdBook),
+      S.listItem()
+        .title('Art')
+        .schemaType('art')
+        .child(S.documentTypeList('art').title('Art'))
+        .icon(MdBrush),
       S.listItem()
         .title('Blog posts')
         .schemaType('post')

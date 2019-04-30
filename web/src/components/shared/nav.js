@@ -22,6 +22,9 @@ const Nav = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
             <Link to='/writing/'>Writing</Link>
           </li>
           <li>
+            <Link to='/art/'>Art</Link>
+          </li>
+          <li>
             <Link to='/blog/'>Blog</Link>
           </li>
           <li>

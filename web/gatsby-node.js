@@ -6,6 +6,80 @@ const { format } = require('date-fns')
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+async function createWritingDetailsPages (graphql, actions, reporter) {
+  const { createPage, createPageDependency } = actions
+  const result = await graphql(`
+    {
+      allSanityWriting(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const writingEdges = (result.data.allSanityWriting || {}).edges || []
+
+  writingEdges.forEach((edge, index) => {
+    const { id, slug = {} } = edge.node
+    const path = `/writing/${slug.current}/`
+
+    reporter.info(`Creating writing details page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/writing-details.js'),
+      context: { id }
+    })
+
+    createPageDependency({ path, nodeId: id })
+  })
+}
+
+async function createArtDetailsPages (graphql, actions, reporter) {
+  const { createPage, createPageDependency } = actions
+  const result = await graphql(`
+    {
+      allSanityArt(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const artEdges = (result.data.allSanityArt || {}).edges || []
+
+  artEdges.forEach((edge, index) => {
+    const { id, slug = {} } = edge.node
+    const path = `/art/${slug.current}/`
+
+    reporter.info(`Creating art details page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/art-details.js'),
+      context: { id }
+    })
+
+    createPageDependency({ path, nodeId: id })
+  })
+}
+
 async function createBlogPostPages (graphql, actions, reporter) {
   const { createPage, createPageDependency } = actions
   const result = await graphql(`
@@ -45,46 +119,11 @@ async function createBlogPostPages (graphql, actions, reporter) {
   })
 }
 
-async function createWritingDetailsPages (graphql, actions, reporter) {
-  const { createPage, createPageDependency } = actions
-  const result = await graphql(`
-    {
-      allSanityWriting(filter: { slug: { current: { ne: null } } }) {
-        edges {
-          node {
-            id
-            slug {
-              current
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  if (result.errors) throw result.errors
-
-  const writingEdges = (result.data.allSanityWriting || {}).edges || []
-
-  writingEdges.forEach((edge, index) => {
-    const { id, slug = {} } = edge.node
-    const path = `/writing/${slug.current}/`
-
-    reporter.info(`Creating writing details page: ${path}`)
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/writing-details.js'),
-      context: { id }
-    })
-
-    createPageDependency({ path, nodeId: id })
-  })
-}
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  await createBlogPostPages(graphql, actions, reporter)
-  console.log('Created blog post pages')
   await createWritingDetailsPages(graphql, actions, reporter)
   console.log('Created writing details pages')
+  await createArtDetailsPages(graphql, actions, reporter)
+  console.log('Created art details pages')
+  await createBlogPostPages(graphql, actions, reporter)
+  console.log('Created blog post pages')
 }
