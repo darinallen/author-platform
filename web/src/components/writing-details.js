@@ -4,12 +4,19 @@ import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
-import RoleList from './role-list'
+import Button from './shared/buttons/button'
+import ButtonLink from './shared/buttons/button-link'
 
 import styles from './writing-details.module.css'
 
 function WritingDetails (props) {
-  const { _rawDescription, _rawExcerpt, authors, categories, title, mainImage, releaseDate } = props
+  const { _rawDescription, _rawExcerpt, categories, title, mainImage, releaseDate } = props
+
+  const formattedReleaseDate =
+    differenceInDays(new Date(releaseDate), new Date()) > 3
+      ? distanceInWords(new Date(releaseDate), new Date())
+      : format(new Date(releaseDate), 'MMMM Do, YYYY')
+
   return (
     <div className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -25,33 +32,30 @@ function WritingDetails (props) {
         </div>
       )}
       <Container>
-        <div className={styles.grid}>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
-            {_rawDescription && <BlockContent blocks={_rawDescription} />}
-            <hr />
-            {_rawExcerpt && <BlockContent blocks={_rawExcerpt} />}
-          </div>
-          <aside className={styles.metaContent}>
+        <div className={styles.mainContent}>
+          <h1 className={styles.title}>{title}</h1>
+          <div className={styles.details}>
             {releaseDate && (
-              <div className={styles.releaseDate}>
-                {differenceInDays(new Date(releaseDate), new Date()) > 3
-                  ? distanceInWords(new Date(releaseDate), new Date())
-                  : format(new Date(releaseDate), 'MMMM Do YYYY')}
-              </div>
+              <span className={styles.releaseDate}>{`Released: ${formattedReleaseDate}`}</span>
             )}
-            {authors && <RoleList items={authors} title='Authors' />}
             {categories && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
+                <span>{'Categories: '}</span>
+                <ul className={styles.categoriesList}>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
                   ))}
                 </ul>
               </div>
             )}
-          </aside>
+          </div>
+
+          {_rawDescription && <BlockContent blocks={_rawDescription} />}
+          <div className={styles.buttons}>
+            <ButtonLink color='primary'>Buy Now</ButtonLink>
+            <Button color='accent'>Read Excerpt</Button>
+          </div>
+          {_rawExcerpt && <BlockContent blocks={_rawExcerpt} />}
         </div>
       </Container>
     </div>

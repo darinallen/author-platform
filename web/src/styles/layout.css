@@ -66,3 +66,104 @@ h6 {
   font-family: Exo2;
   font-weight: bold;
 }
+
+/* --------------- UTILITY CLASSES --------------- */
+.center-text {
+  text-align: center !important;
+}
+
+.mbs {
+  margin-bottom: 1.5rem !important;
+}
+
+.mbm {
+  margin-bottom: 4rem !important;
+}
+
+.mbl {
+  margin-bottom: 8rem !important;
+}
+
+.mts {
+  margin-top: 1.5rem !important;
+}
+
+.mtm {
+  margin-top: 4rem !important;
+}
+
+.mtl {
+  margin-top: 8rem !important;
+}
+
+.mls {
+  margin-left: 1.5rem !important;
+}
+
+.mlm {
+  margin-left: 4rem !important;
+}
+
+.mll {
+  margin-left: 8rem !important;
+}
+
+.mrs {
+  margin-right: 1.5rem !important;
+}
+
+.mrm {
+  margin-right: 4rem !important;
+}
+
+.mrl {
+  margin-right: 8rem !important;
+}
+
+.pbs {
+  padding-bottom: 1.5rem !important;
+}
+
+.pbm {
+  padding-bottom: 4rem !important;
+}
+
+.pbl {
+  padding-bottom: 8rem !important;
+}
+
+.pts {
+  padding-top: 1.5rem !important;
+}
+
+.ptm {
+  padding-top: 4rem !important;
+}
+
+.ptl {
+  padding-top: 8rem !important;
+}
+
+.pls {
+  padding-left: 1.5rem !important;
+}
+
+.plm {
+  padding-left: 4rem !important;
+}
+
+.pll {
+  padding-left: 8rem !important;
+}
+
+.prs {
+  padding-right: 1.5rem !important;
+}
+
+.prm {
+  padding-right: 4rem !important;
+}
+
+.prl {
+  padding-right: 8rem !important;
+}

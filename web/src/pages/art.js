@@ -28,7 +28,7 @@ const ArtPage = props => {
   return (
     <Layout>
       <SEO title='Art' />
-      <Hero image={typewriter} titleTop='Art' subtitle='Abstract Artwork & Digital Images' />
+      <Hero image={typewriter} titleTop='Art' subtitle='Abstract Artwork & Digital Creations' />
       <Container>
         <h1 className={responsiveTitle1}>Art</h1>
         {artNodes && (
