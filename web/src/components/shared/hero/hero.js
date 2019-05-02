@@ -4,17 +4,27 @@ import { cn } from '../../../lib/helpers'
 import styles from './hero.module.css'
 import typography from '../../typography.module.css'
 
-const Hero = ({ image, titleTop, titleBottom, subtitle, className }) => (
-  <div className={styles.root}>
-    <img className={cn(styles.image, styles[className])} src={image} />
-    <div className={styles.text}>
-      <h1 className={`${typography.title1} ${styles.title}`}>
-        <span className={styles.titleTop}>{titleTop}</span>
-        <span className={styles.titleBottom}>{titleBottom}</span>
-      </h1>
-      <h2 className={styles.subtitle}>{subtitle}</h2>
+const Hero = ({ image, titleTop, titleBottom, subtitle, grayscale, noBottomShadow, className }) => {
+  return (
+    <div className={styles.root}>
+      <img
+        className={cn(
+          styles.image,
+          styles[className],
+          grayscale ? styles.grayscale : '',
+          noBottomShadow ? styles.noBottomShadow : ''
+        )}
+        src={image}
+      />
+      <div className={styles.text}>
+        <h1 className={`${typography.title1} ${styles.title}`}>
+          <span className={styles.titleTop}>{titleTop}</span>
+          <span className={styles.titleBottom}>{titleBottom}</span>
+        </h1>
+        <h2 className={styles.subtitle}>{subtitle}</h2>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Hero

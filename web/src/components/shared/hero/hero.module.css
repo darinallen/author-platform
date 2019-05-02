@@ -19,15 +19,21 @@
 .image {
   margin-top: 0.8rem;
   max-height: 10.5rem;
-  filter: grayscale() contrast(1.1);
   align-self: center;
   margin-bottom: 1.5rem;
+  -webkit-filter: contrast(1.1) drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.5));
+  filter: contrast(1.1) drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.5));
 
   @media (--media-min-medium) {
     max-height: 14rem;
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+
+.noBottomShadow {
+  -webkit-filter: contrast(1.1);
+  filter: contrast(1.1);
 }
 
 .headshot {
@@ -77,6 +83,10 @@
 
 .titleBottom {
   color: var(--color-white);
+
+  @media (--media-min-medium) {
+    display: block;
+  }
 }
 
 .subtitle {

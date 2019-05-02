@@ -73,7 +73,7 @@ h6 {
 }
 
 .mbs {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .mbm {
@@ -85,7 +85,7 @@ h6 {
 }
 
 .mts {
-  margin-top: 1.5rem !important;
+  margin-top: 2rem !important;
 }
 
 .mtm {
@@ -97,7 +97,7 @@ h6 {
 }
 
 .mls {
-  margin-left: 1.5rem !important;
+  margin-left: 2rem !important;
 }
 
 .mlm {
@@ -109,7 +109,7 @@ h6 {
 }
 
 .mrs {
-  margin-right: 1.5rem !important;
+  margin-right: 2rem !important;
 }
 
 .mrm {
@@ -121,7 +121,7 @@ h6 {
 }
 
 .pbs {
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .pbm {
@@ -133,7 +133,7 @@ h6 {
 }
 
 .pts {
-  padding-top: 1.5rem !important;
+  padding-top: 2rem !important;
 }
 
 .ptm {
@@ -145,7 +145,7 @@ h6 {
 }
 
 .pls {
-  padding-left: 1.5rem !important;
+  padding-left: 2rem !important;
 }
 
 .plm {
@@ -157,7 +157,7 @@ h6 {
 }
 
 .prs {
-  padding-right: 1.5rem !important;
+  padding-right: 2rem !important;
 }
 
 .prm {
@@ -166,4 +166,25 @@ h6 {
 
 .prl {
   padding-right: 8rem !important;
+}
+
+/* --------------- CROSS-FADE ANIMATIONS --------------- */
+.cross-fade-leave {
+  opacity: 1;
+}
+.cross-fade-leave.cross-fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.cross-fade-enter {
+  opacity: 0;
+}
+.cross-fade-enter.cross-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.cross-fade-height {
+  transition: height 0.5s ease-in-out;
 }

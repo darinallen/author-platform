@@ -47,6 +47,7 @@ const IndexPage = props => {
         titleTop='T Anthony '
         titleBottom='Allen'
         subtitle='Novels, Flash Fiction & Artwork'
+        noBottomShadow
         className='headshot'
       />
       <Container>
