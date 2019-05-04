@@ -9,6 +9,7 @@ import tAnthony from '../components/shared/hero/tanthony.png'
 import Container from '../components/container'
 import PreviewGrid from '../components/shared/preview-grid'
 import WritingPreview from '../components/writing-preview'
+import ArtPreview from '../components/art-preview'
 import Featured from '../components/featured'
 import BlogPostPreview from '../components/blog-post-preview'
 import styles from './index.module.css'
@@ -32,6 +33,10 @@ const IndexPage = props => {
 
   const writingNodes = (data || {}).writing
     ? mapEdgesToNodes(data.writing).filter(filterOutDocsWithoutSlugs)
+    : []
+
+  const artNodes = (data || {}).art
+    ? mapEdgesToNodes(data.art).filter(filterOutDocsWithoutSlugs)
     : []
 
   if (!site) {
@@ -65,6 +70,16 @@ const IndexPage = props => {
               writingNodes.map(node => (
                 <li key={node.id}>
                   <WritingPreview {...node} />
+                </li>
+              ))}
+          </PreviewGrid>
+        )}
+        {artNodes && (
+          <PreviewGrid title='Recent art' browseMoreHref='/art/'>
+            {artNodes &&
+              artNodes.map(node => (
+                <li key={node.id}>
+                  <ArtPreview {...node} />
                 </li>
               ))}
           </PreviewGrid>
@@ -148,6 +163,28 @@ export const query = graphql`
           }
           title
           _rawExcerpt
+          slug {
+            current
+          }
+          categories {
+            title
+          }
+        }
+      }
+    }
+
+    art: allSanityArt(limit: 6, sort: { fields: [creationDate], order: DESC }) {
+      edges {
+        node {
+          id
+          creationDate
+          mainImage {
+            asset {
+              _id
+            }
+            alt
+          }
+          title
           slug {
             current
           }

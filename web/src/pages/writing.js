@@ -32,7 +32,7 @@ const WritingPage = props => {
         image={typewriter}
         titleTop='Written '
         titleBottom='Works'
-        subtitle='Books & Short Stories'
+        subtitle='Books & Flash Fiction'
       />
       <Container>
         <h2 className={responsiveTitle2}>Books</h2>
