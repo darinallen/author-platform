@@ -3,35 +3,17 @@
 @import './typography.module.css';
 
 .root {
-  display: block;
   text-decoration: none;
-  text-align: center;
   color: inherit;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 24px 0 rgba(0, 0, 0, 0.1);
-}
-
-.header {
-  height: 2.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  background-color: var(--color-primary);
+  flex-direction: column;
   display: flex;
-  justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
-  @media (--media-min-small) {
-    height: 3.5rem;
-  }
+  height: 100%;
+  line-height: 0;
 }
 
 .title {
-  color: white;
-
+  margin-top: 0;
   font-size: var(--font-small-size);
   line-height: var(--font-base-line-height);
 
@@ -47,27 +29,49 @@
   }
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+.frame {
+  background-color: rgb(218, 215, 194);
+  border-radius: 2px;
+  border: solid 2.5vmin rgb(214, 214, 214);
+  border-top-color: rgb(230, 230, 230);
+  border-right-color: rgb(214, 214, 214);
+  border-bottom-color: rgb(197, 197, 197);
+  border-left-color: rgb(214, 214, 214);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35) inset, 0 3px 5px 3px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  padding: 1.5vmin;
+  position: relative;
+  text-align: center;
 }
 
-.artContainer {
-  margin-bottom: 1rem;
+.frame:before {
+  border-radius: 2px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.35) inset;
+  content: '';
+  position: absolute;
+  top: -1vmin;
+  right: -1vmin;
+  bottom: -1vmin;
+  left: -1vmin;
+}
+.frame:after {
+  border-radius: 2px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.35);
+  content: '';
+  position: absolute;
+  top: -1.25vmin;
+  right: -1.25vmin;
+  bottom: -1.25vmin;
+  left: -1.25vmin;
 }
 
 .art {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.summary {
-  padding-top: 0.8rem;
-  border-top: 1px solid #ccc;
+  border: solid 2px;
+  border-top-color: #ccb;
+  border-right-color: #eed;
+  border-bottom-color: #ffe;
+  border-left-color: #eed;
+  min-width: 100%;
 }

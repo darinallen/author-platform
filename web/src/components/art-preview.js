@@ -9,17 +9,14 @@ const ArtPreview = props => (
     <div className={styles.header}>
       <h3 className={styles.title}>{props.title}</h3>
     </div>
-    <div className={styles.content}>
-      <div className={styles.artContainer}>
-        <img
-          className={styles.art}
-          src={imageUrlFor(buildImageObj(props.mainImage))
-            .width(140)
-            .url()}
-          alt={props.mainImage.alt}
-        />
-      </div>
-      <span className={styles.summary}>This is the art summary. It is very nice art!</span>
+    <div className={styles.frame}>
+      <img
+        className={styles.art}
+        src={imageUrlFor(buildImageObj(props.mainImage))
+          .width(140)
+          .url()}
+        alt={props.mainImage.alt}
+      />
     </div>
   </Link>
 )
