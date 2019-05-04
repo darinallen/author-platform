@@ -6,9 +6,11 @@ import BlogPostPreview from '../components/blog-post-preview'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
+import Hero from '../components/shared/hero/hero'
+import blog from '../components/shared/hero/blog.png'
 import Layout from '../containers/layout'
 
-import { responsiveTitle1 } from '../components/typography.module.css'
+import { responsiveTitle2 } from '../components/typography.module.css'
 
 const BlogPage = props => {
   const { data, errors } = props
@@ -26,8 +28,9 @@ const BlogPage = props => {
   return (
     <Layout>
       <SEO title='Blog' />
+      <Hero image={blog} titleTop='Blog ' titleBottom='Posts' subtitle='Thoughts & Opinions' />
       <Container>
-        <h1 className={responsiveTitle1}>Blog</h1>
+        <h2 className={responsiveTitle2}>Latest Posts</h2>
         <PreviewGrid>
           {postNodes &&
             postNodes.map(node => (

@@ -39,11 +39,16 @@
     list-style: none;
     padding: 0;
   }
+  margin-bottom: 2rem;
 }
 
 .categoriesList {
   display: inline-block;
-  margin: 0 0 2rem 0;
+  margin: 0;
+}
+
+.category {
+  display: inline;
 }
 
 .doubleDivider {

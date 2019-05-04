@@ -6,11 +6,11 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
-import typewriter from '../components/shared/hero/typewriter.png'
+import art from '../components/shared/hero/art.png'
 import PreviewGrid from '../components/shared/preview-grid'
 import ArtPreview from '../components/art-preview'
 
-import { responsiveTitle1 } from '../components/typography.module.css'
+import { responsiveTitle2 } from '../components/typography.module.css'
 
 const ArtPage = props => {
   const { data, errors } = props
@@ -28,9 +28,14 @@ const ArtPage = props => {
   return (
     <Layout>
       <SEO title='Art' />
-      <Hero image={typewriter} titleTop='Art' subtitle='Abstract Artwork & Digital Creations' />
+      <Hero
+        image={art}
+        titleTop='Digital '
+        titleBottom='Art'
+        subtitle='Original Designs & Creations'
+      />
       <Container>
-        <h1 className={responsiveTitle1}>Art</h1>
+        <h2 className={responsiveTitle2}>Art</h2>
         {artNodes && (
           <PreviewGrid>
             {artNodes && artNodes.map(node => <li key={node.id}>{<ArtPreview {...node} />}</li>)}

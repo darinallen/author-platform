@@ -2,22 +2,21 @@ import React from 'react'
 import { cn } from '../../../lib/helpers'
 
 import styles from './hero.module.css'
-import typography from '../../typography.module.css'
 
-const Hero = ({ image, titleTop, titleBottom, subtitle, grayscale, noBottomShadow, className }) => {
+const Hero = ({ image, titleTop, titleBottom, subtitle, grayscale, bottomAlign, leftAlign }) => {
   return (
     <div className={styles.root}>
       <img
         className={cn(
           styles.image,
-          styles[className],
           grayscale ? styles.grayscale : '',
-          noBottomShadow ? styles.noBottomShadow : ''
+          bottomAlign ? styles.bottomAlign : '',
+          leftAlign ? styles.leftAlign : ''
         )}
         src={image}
       />
       <div className={styles.text}>
-        <h1 className={`${typography.title1} ${styles.title}`}>
+        <h1 className={styles.title}>
           <span className={styles.titleTop}>{titleTop}</span>
           <span className={styles.titleBottom}>{titleBottom}</span>
         </h1>

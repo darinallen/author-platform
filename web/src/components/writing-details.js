@@ -40,8 +40,10 @@ function WritingDetails (props) {
             <div className={styles.categories}>
               <span>{'Categories: '}</span>
               <ul className={styles.categoriesList}>
-                {categories.map(category => (
-                  <li key={category._id}>{category.title}</li>
+                {categories.map((category, index) => (
+                  <li className={styles.category} key={category._id}>
+                    {`${category.title}${index < categories.length - 1 ? ', ' : ''}`}
+                  </li>
                 ))}
               </ul>
             </div>

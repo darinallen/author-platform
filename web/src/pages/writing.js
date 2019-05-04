@@ -10,7 +10,7 @@ import typewriter from '../components/shared/hero/typewriter.png'
 import PreviewGrid from '../components/shared/preview-grid'
 import WritingPreview from '../components/writing-preview'
 
-import { responsiveTitle1 } from '../components/typography.module.css'
+import { responsiveTitle2 } from '../components/typography.module.css'
 
 const WritingPage = props => {
   const { data, errors } = props
@@ -30,11 +30,12 @@ const WritingPage = props => {
       <SEO title='Writing' />
       <Hero
         image={typewriter}
-        titleTop='Writing'
-        subtitle='Science Fiction, Slice of Life & Short Stories'
+        titleTop='Written '
+        titleBottom='Works'
+        subtitle='Books & Short Stories'
       />
       <Container>
-        <h1 className={responsiveTitle1}>Writing</h1>
+        <h2 className={responsiveTitle2}>Books</h2>
         {writingNodes && (
           <PreviewGrid>
             {writingNodes &&

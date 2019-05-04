@@ -5,6 +5,8 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import PeopleGrid from '../components/people-grid'
 import SEO from '../components/seo'
+import Hero from '../components/shared/hero/hero'
+import family from '../components/shared/hero/family.png'
 import Layout from '../containers/layout'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
@@ -34,8 +36,16 @@ const AboutPage = props => {
   return (
     <Layout>
       <SEO title={page.title} />
+      <Hero
+        image={family}
+        titleTop='About '
+        titleBottom='Me'
+        subtitle='Bio & Contact Information'
+        bottomAlign
+        leftAlign
+      />
       <Container>
-        <h1 className={responsiveTitle1}>{page.title}</h1>
+        <h2 className={responsiveTitle1}>{page.title}</h2>
         <BlockContent blocks={page._rawBody || []} />
         {personNodes && personNodes.length > 0 && <PeopleGrid items={personNodes} title='People' />}
       </Container>

@@ -7,11 +7,12 @@ import Layout from '../containers/layout'
 import Hero from '../components/shared/hero/hero'
 import tAnthony from '../components/shared/hero/tanthony.png'
 import Container from '../components/container'
-import Welcome from '../components/welcome'
 import PreviewGrid from '../components/shared/preview-grid'
 import WritingPreview from '../components/writing-preview'
 import Featured from '../components/featured'
 import BlogPostPreview from '../components/blog-post-preview'
+import styles from './index.module.css'
+import typography from '../components/typography.module.css'
 
 const IndexPage = props => {
   const { data, errors } = props
@@ -46,13 +47,18 @@ const IndexPage = props => {
         image={tAnthony}
         titleTop='T Anthony '
         titleBottom='Allen'
-        subtitle='Novels, Flash Fiction & Artwork'
-        noBottomShadow
-        className='headshot'
+        subtitle='Author & Digital Artist'
+        bottomAlign
       />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        <Welcome />
+        <h2 className={typography.responsiveTitle1}>Welcome</h2>
+        <p className={styles.welcome}>
+          Hello, and thank you for stopping by my website. This is a place where I will share recent
+          creative works, including books, short stories, blog posts, and art (coming soon). My
+          writing covers a variety of genres, but I often weave in science fiction and fantasy
+          themes. Blog posts cover everything from technology to politics and world events. Please
+          feel free to drop me a note, and thanks so much for your interest!
+        </p>
         {writingNodes && (
           <PreviewGrid title='Recent writing' browseMoreHref='/writing/'>
             {writingNodes &&

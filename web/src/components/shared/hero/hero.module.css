@@ -19,6 +19,7 @@
 .image {
   margin-top: 0.8rem;
   max-height: 10.5rem;
+  max-width: 100%;
   align-self: center;
   margin-bottom: 1.5rem;
   -webkit-filter: contrast(1.1) drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.5));
@@ -31,14 +32,11 @@
   }
 }
 
-.noBottomShadow {
-  -webkit-filter: contrast(1.1);
-  filter: contrast(1.1);
-}
-
-.headshot {
+.bottomAlign {
   max-height: 12rem;
   margin-bottom: 0;
+  -webkit-filter: contrast(1.1);
+  filter: contrast(1.1);
 
   @media (--media-min-medium) {
     max-height: 17rem;
@@ -46,19 +44,19 @@
   }
 }
 
+.leftAlign {
+}
+
 .text {
   margin-top: 1rem;
+  padding-right: 1rem;
   text-align: center;
 
   @media (--media-min-medium) {
     margin-top: -1rem;
-    margin-left: 1rem;
-    width: 19rem;
-    align-self: center;
-  }
-
-  @media (--media-min-large) {
     margin-left: 3rem;
+    max-width: 19rem;
+    align-self: center;
   }
 }
 
