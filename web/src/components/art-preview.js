@@ -6,9 +6,9 @@ import styles from './art-preview.module.css'
 
 const ArtPreview = props => (
   <Link className={styles.root} to={getArtUrl(props.slug.current)}>
-    <div className={styles.header}>
+    {/* <div className={styles.header}>
       <h3 className={styles.title}>{props.title}</h3>
-    </div>
+    </div> */}
     <div className={styles.frame}>
       <img
         className={styles.art}
