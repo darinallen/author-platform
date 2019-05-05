@@ -74,17 +74,6 @@
     border-left-color: rgb(214, 214, 214);
     padding: 1.5vmin;
   }
-
-  @media (hover: hover) {
-    @nest .root:hover & {
-      transform: translateY(-3px);
-      border: solid 3vmin rgb(194, 194, 194);
-      border-top-color: rgb(210, 210, 210);
-      border-right-color: rgb(194, 194, 194);
-      border-bottom-color: rgb(177, 177, 177);
-      border-left-color: rgb(194, 194, 194);
-    }
-  }
 }
 
 .frame:before {
@@ -147,6 +136,42 @@
     right: -1.875vmin;
     bottom: -1.875vmin;
     left: -1.875vmin;
+  }
+}
+
+.frame:hover {
+  transform: translateY(-3px);
+  border: solid 10vmin rgb(194, 194, 194);
+  border-top-color: rgb(210, 210, 210);
+  border-right-color: rgb(194, 194, 194);
+  border-bottom-color: rgb(177, 177, 177);
+  border-left-color: rgb(194, 194, 194);
+
+  @media (--media-min-small) {
+    transform: translateY(-3px);
+    border: solid 6vmin rgb(194, 194, 194);
+    border-top-color: rgb(210, 210, 210);
+    border-right-color: rgb(194, 194, 194);
+    border-bottom-color: rgb(177, 177, 177);
+    border-left-color: rgb(194, 194, 194);
+  }
+
+  @media (--media-min-medium) {
+    transform: translateY(-3px);
+    border: solid 4vmin rgb(194, 194, 194);
+    border-top-color: rgb(210, 210, 210);
+    border-right-color: rgb(194, 194, 194);
+    border-bottom-color: rgb(177, 177, 177);
+    border-left-color: rgb(194, 194, 194);
+  }
+
+  @media (--media-min-large) {
+    transform: translateY(-3px);
+    border: solid 3vmin rgb(194, 194, 194);
+    border-top-color: rgb(210, 210, 210);
+    border-right-color: rgb(194, 194, 194);
+    border-bottom-color: rgb(177, 177, 177);
+    border-left-color: rgb(194, 194, 194);
   }
 }
 
