@@ -140,38 +140,39 @@
 }
 
 .frame:hover {
+  background-color: #ebebeb;
   transform: translateY(-3px);
-  border: solid 10vmin rgb(194, 194, 194);
-  border-top-color: rgb(210, 210, 210);
-  border-right-color: rgb(194, 194, 194);
-  border-bottom-color: rgb(177, 177, 177);
-  border-left-color: rgb(194, 194, 194);
+  border: solid 10vmin rgb(200, 200, 200);
+  border-top-color: rgb(215, 215, 215);
+  border-right-color: rgb(200, 200, 200);
+  border-bottom-color: rgb(182, 182, 182);
+  border-left-color: rgb(200, 200, 200);
 
   @media (--media-min-small) {
     transform: translateY(-3px);
-    border: solid 6vmin rgb(194, 194, 194);
-    border-top-color: rgb(210, 210, 210);
-    border-right-color: rgb(194, 194, 194);
-    border-bottom-color: rgb(177, 177, 177);
-    border-left-color: rgb(194, 194, 194);
+    border: solid 6vmin rgb(200, 200, 200);
+    border-top-color: rgb(215, 215, 215);
+    border-right-color: rgb(200, 200, 200);
+    border-bottom-color: rgb(182, 182, 182);
+    border-left-color: rgb(200, 200, 200);
   }
 
   @media (--media-min-medium) {
     transform: translateY(-3px);
-    border: solid 4vmin rgb(194, 194, 194);
-    border-top-color: rgb(210, 210, 210);
-    border-right-color: rgb(194, 194, 194);
-    border-bottom-color: rgb(177, 177, 177);
-    border-left-color: rgb(194, 194, 194);
+    border: solid 4vmin rgb(200, 200, 200);
+    border-top-color: rgb(215, 215, 215);
+    border-right-color: rgb(200, 200, 200);
+    border-bottom-color: rgb(182, 182, 182);
+    border-left-color: rgb(200, 200, 200);
   }
 
   @media (--media-min-large) {
     transform: translateY(-3px);
-    border: solid 3vmin rgb(194, 194, 194);
-    border-top-color: rgb(210, 210, 210);
-    border-right-color: rgb(194, 194, 194);
-    border-bottom-color: rgb(177, 177, 177);
-    border-left-color: rgb(194, 194, 194);
+    border: solid 3vmin rgb(200, 200, 200);
+    border-top-color: rgb(215, 215, 215);
+    border-right-color: rgb(200, 200, 200);
+    border-bottom-color: rgb(182, 182, 182);
+    border-left-color: rgb(200, 200, 200);
   }
 }
 
@@ -183,4 +184,8 @@
   border-left-color: #eed;
   width: 100%;
   max-height: 100%;
+}
+
+.frame:hover .art {
+  filter: contrast(1.2);
 }
