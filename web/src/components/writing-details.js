@@ -24,7 +24,7 @@ function WritingDetails (props) {
     <div className={styles.root}>
       <Hero
         image={imageUrlFor(buildImageObj(mainImage))
-          .width(140)
+          .width(400)
           .url()}
         titleTop='Writing '
         subtitle={title}

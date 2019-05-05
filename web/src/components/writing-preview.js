@@ -14,7 +14,7 @@ const WritingPreview = props => (
         <img
           className={styles.bookCover}
           src={imageUrlFor(buildImageObj(props.mainImage))
-            .width(140)
+            .width(200)
             .url()}
           alt={props.mainImage.alt}
         />

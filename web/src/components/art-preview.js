@@ -13,7 +13,7 @@ const ArtPreview = props => (
       <img
         className={styles.art}
         src={imageUrlFor(buildImageObj(props.mainImage))
-          .width(140)
+          .width(400)
           .url()}
         alt={props.mainImage.alt}
       />

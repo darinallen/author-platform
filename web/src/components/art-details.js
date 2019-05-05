@@ -30,7 +30,7 @@ function ArtDetails (props) {
             <h1 className={styles.title}>{title}</h1>
             {_rawDescription && <BlockContent blocks={_rawDescription} />}
           </div>
-          <aside className={styles.metaContent}>
+          {/* <aside className={styles.metaContent}>
             {creationDate && (
               <div className={styles.creationDate}>
                 {differenceInDays(new Date(creationDate), new Date()) > 3
@@ -49,7 +49,7 @@ function ArtDetails (props) {
                 </ul>
               </div>
             )}
-          </aside>
+          </aside> */}
         </div>
       </Container>
     </div>
