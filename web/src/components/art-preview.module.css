@@ -31,7 +31,7 @@
 } */
 
 .frame {
-  background-color: #f8f8f8;
+  background-color: #f8f7f6;
   border-radius: 2px;
   border: solid 10vmin rgb(220, 220, 220);
   border-top-color: rgb(235, 235, 235);
@@ -140,7 +140,7 @@
 }
 
 .frame:hover {
-  background-color: #ebebeb;
+  background-color: #e7e6e5;
   transform: translateY(-3px);
   border: solid 10vmin rgb(200, 200, 200);
   border-top-color: rgb(215, 215, 215);
