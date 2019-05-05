@@ -11,6 +11,7 @@ import Layout from '../containers/layout'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
 import { responsiveTitle2 } from '../components/typography.module.css'
+import styles from './about.module.css'
 
 const AboutPage = props => {
   const { data, errors } = props
@@ -46,8 +47,12 @@ const AboutPage = props => {
       />
       <Container>
         <h2 className={responsiveTitle2}>{page.title}</h2>
-        <BlockContent blocks={page._rawBody || []} />
-        {personNodes && personNodes.length > 0 && <PeopleGrid items={personNodes} title='People' />}
+        <main className={styles.content}>
+          <BlockContent blocks={page._rawBody || []} />
+          {personNodes && personNodes.length > 0 && (
+            <PeopleGrid items={personNodes} title='People' />
+          )}
+        </main>
       </Container>
     </Layout>
   )
