@@ -33,7 +33,7 @@
 .frame {
   background-color: rgb(218, 215, 194);
   border-radius: 2px;
-  border: solid 8vmin rgb(214, 214, 214);
+  border: solid 10vmin rgb(214, 214, 214);
   border-top-color: rgb(230, 230, 230);
   border-right-color: rgb(214, 214, 214);
   border-bottom-color: rgb(197, 197, 197);
@@ -41,13 +41,15 @@
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35) inset, 0 3px 5px 3px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
   display: inline-block;
-  padding: 4vmin;
+  padding: 6vmin;
   position: relative;
   text-align: center;
+  width: 100%;
+  max-height: 100%;
   transition: 0.5s;
 
   @media (--media-min-small) {
-    border: solid 4vmin rgb(214, 214, 214);
+    border: solid 6vmin rgb(214, 214, 214);
     border-top-color: rgb(230, 230, 230);
     border-right-color: rgb(214, 214, 214);
     border-bottom-color: rgb(197, 197, 197);
@@ -64,10 +66,19 @@
     padding: 2vmin;
   }
 
+  @media (--media-min-large) {
+    border: solid 3vmin rgb(214, 214, 214);
+    border-top-color: rgb(230, 230, 230);
+    border-right-color: rgb(214, 214, 214);
+    border-bottom-color: rgb(197, 197, 197);
+    border-left-color: rgb(214, 214, 214);
+    padding: 1.5vmin;
+  }
+
   @media (hover: hover) {
     @nest .root:hover & {
       transform: translateY(-3px);
-      border: solid 4vmin rgb(194, 194, 194);
+      border: solid 3vmin rgb(194, 194, 194);
       border-top-color: rgb(210, 210, 210);
       border-right-color: rgb(194, 194, 194);
       border-bottom-color: rgb(177, 177, 177);
@@ -99,6 +110,13 @@
     bottom: -2vmin;
     left: -2vmin;
   }
+
+  @media (--media-min-large) {
+    top: -1.5vmin;
+    right: -1.5vmin;
+    bottom: -1.5vmin;
+    left: -1.5vmin;
+  }
 }
 .frame:after {
   border-radius: 2px;
@@ -123,6 +141,13 @@
     bottom: -2.5vmin;
     left: -2.5vmin;
   }
+
+  @media (--media-min-large) {
+    top: -1.875vmin;
+    right: -1.875vmin;
+    bottom: -1.875vmin;
+    left: -1.875vmin;
+  }
 }
 
 .art {
@@ -131,5 +156,6 @@
   border-right-color: #eed;
   border-bottom-color: #ffe;
   border-left-color: #eed;
-  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
 }
