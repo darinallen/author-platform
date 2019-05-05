@@ -10,8 +10,7 @@ const Hero = ({ image, titleTop, titleBottom, subtitle, grayscale, bottomAlign, 
         className={cn(
           styles.image,
           grayscale ? styles.grayscale : '',
-          bottomAlign ? styles.bottomAlign : '',
-          leftAlign ? styles.leftAlign : ''
+          bottomAlign ? styles.bottomAlign : ''
         )}
         src={image}
       />

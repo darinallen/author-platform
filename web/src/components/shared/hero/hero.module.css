@@ -36,7 +36,7 @@
   max-height: 12rem;
   margin-bottom: 0;
   -webkit-filter: contrast(1.1);
-  filter: contrast(1.1);
+  filter: none;
 
   @media (--media-min-medium) {
     max-height: 17rem;
@@ -44,17 +44,14 @@
   }
 }
 
-.leftAlign {
-}
-
 .text {
   margin-top: 1rem;
-  padding-right: 1rem;
   text-align: center;
 
   @media (--media-min-medium) {
     margin-top: -1rem;
     margin-left: 3rem;
+    padding-right: 1rem;
     max-width: 19rem;
     align-self: center;
   }
