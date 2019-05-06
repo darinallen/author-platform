@@ -24,11 +24,6 @@
   padding: 1rem;
 }
 
-.companyAddress {
-  text-align: center;
-  margin: 0 0 1rem;
-}
-
 .siteInfo {
   text-align: center;
   font-size: var(--font-small-size);

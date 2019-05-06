@@ -5,16 +5,7 @@ import MdBook from 'react-icons/lib/md/book'
 import MdBrush from 'react-icons/lib/md/brush'
 import FaFileO from 'react-icons/lib/fa/file-o'
 
-const hiddenTypes = [
-  'category',
-  'companyInfo',
-  'page',
-  'person',
-  'post',
-  'siteSettings',
-  'writing',
-  'art'
-]
+const hiddenTypes = ['category', 'page', 'person', 'post', 'siteSettings', 'writing', 'art']
 
 export default () =>
   S.list()
@@ -29,15 +20,6 @@ export default () =>
             .documentId('siteSettings')
         )
         .icon(MdSettings),
-      S.listItem()
-        .title('Company Info')
-        .child(
-          S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
-        )
-        .icon(MdBusiness),
       S.listItem()
         .title('Writing')
         .schemaType('writing')
@@ -65,15 +47,6 @@ export default () =>
                     .id('aboutPage')
                     .schemaType('page')
                     .documentId('about')
-                )
-                .icon(FaFileO),
-              S.listItem()
-                .title('Contact')
-                .child(
-                  S.editor()
-                    .id('contactPage')
-                    .schemaType('page')
-                    .documentId('contact')
                 )
                 .icon(FaFileO)
             ])
